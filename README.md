@@ -1,4 +1,4 @@
-This web app lets you find out highest overall rated hospitals within in 20-mile radius your zip code. This web application works only if you live in the USA. 
+This web application lets you find out highest overall rated hospitals within in 20-mile radius your zip code. It presents you with a verbal summary of your choices. This web application works only if you live in the USA. 
 
 # Background
 
