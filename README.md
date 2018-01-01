@@ -18,3 +18,7 @@ Apparently all US hospitals that accept publicly insured patients (in the US, th
 > 71923 for exactly one option
 > 72055 for multiple options
 > 13210 for the case where the highest rated hospital is not the closest
+
+# Disclaimer
+
+This was a internal Qxf2 practice project to learn natural language generation with Python and nothing more. If you are interested in using an application like this, you should use the US Government's official [Hospital Search Application](https://www.medicare.gov/hospitalcompare/search.html) and not this repository. 
