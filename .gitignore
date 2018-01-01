@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.lnk
+logs/
+screenshots/
+log/
+.cache/
+geckodriver.log
+.DS_Store
+debug.log
+*.orig
+*credentials*.py
+*config*.py
