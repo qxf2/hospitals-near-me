@@ -1,0 +1,17 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="col-md-6 col-md-offset-3">
+    <h1 class="margin-base-vertical text-center">Find the highest rated hospitals near you!</h1>
+    <form action="/hospitals-near-me" method="get" class="margin-base-vertical">
+        <p class="input-group">
+            <span class="input-group-addon">
+                <span class="icon-arrow-right"></span>
+            </span>
+            <input type="text" class="form-control input-lg" name="query" placeholder="Enter your 5 digit zip code">
+        </p>
+        <p class="text-center top-space-40">
+            <button type="submit" class="btn btn-success btn-lg">Search</button>
+        </p>
+    </form>
+</div>
+{% endblock %}

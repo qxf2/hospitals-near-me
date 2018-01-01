@@ -1,4 +1,4 @@
-This web application lets you find out highest overall rated hospitals within in 20-mile radius your zip code. It presents you with a verbal summary of your choices. This web application works only if you live in the USA. 
+This web application lets you find out highest overall rated hospitals within in 20-mile radius your zip code. It presents you with a verbal summary of your choices. This web application knows zip codes from the USA only. 
 
 # Background
 
@@ -9,4 +9,12 @@ Apparently all US hospitals that accept publicly insured patients (in the US, th
 
 # Setup
 
-To be filled
+1. pip install -r REQUIREMENTS.txt
+2. To start the server:
+> python run.py
+3. Go to localhost:6464 in your browser
+4. To test the different messages, you can use the following zip codes
+> 99557 for no hospitals
+> 71923 for exactly one option
+> 72055 for multiple options
+> 13210 for the case where the highest rated hospital is not the closest

@@ -12,3 +12,4 @@ debug.log
 *.orig
 *credentials*.py
 *config*.py
+.vscode/
