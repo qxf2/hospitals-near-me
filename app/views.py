@@ -29,9 +29,10 @@ def search():
         hospitals = hospital_obj.filter_data_by_zipcode(zip_code_list)
         distance = []
         for curr_zip in hospitals['ZIP Code']:
-            distance.append("%.1f"%zipcode_analyzer.get_distance_between_zips(zip_code,curr_zip))
+            distance.append(
+                zipcode_analyzer.get_distance_between_zips(zip_code, curr_zip))
         hospitals['Distance'] = distance
         nlg_obj = Hospital_NLG(hospitals)
         summary = nlg_obj.get_summary()
 
-        return render_template('hospitals-near-me.html', title='Results', summary = summary)
+        return render_template('hospitals-near-me.html', title='Results', summary=summary)

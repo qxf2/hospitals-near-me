@@ -51,7 +51,7 @@ class Hospital_NLG:
         if self.rows > 0:
             self.aggregation = '<br><br><h3>Tabular summary:</h3><br>'
             self.aggregation += self.data[['Hospital Name', 'Hospital overall rating', 'Distance',
-                                           'Phone Number', 'Hospital Type', 'Emergency Services', 'Hospital Ownership']].to_html(index=False)
+                                           'Phone Number', 'Hospital Type', 'Emergency Services', 'Hospital Ownership']].to_html(index=False, float_format="%.2f")
 
     def get_hospital_summary(self):
         "Return a verbal summary for the hospitals provided"
