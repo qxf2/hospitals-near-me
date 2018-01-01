@@ -7,25 +7,26 @@ d) If your highest rated option is no the closest, it will mention that fact
 e) Make a lexical choice (Highest, high, etc.) regarding the overall score
 """
 
+
 class Hospital_NLG:
     "Class for generating natural language about hospitals"
 
     def __init__(self, hospital_data):
         "Initialize the class with a DataFrame about available hospitals"
         self.set_data(hospital_data)
-        self.opening = '' # Human friendly first line
+        self.opening = ''  # Human friendly first line
         self.hospital_choices = ''  # Top choices of hospitals
         self.aggregation = ''  # Tabular data
         self.lexical_mapping = {'5 overall rating': 'the highest overall rating', '4 overall rating': 'a high overall rating', '3 overall rating': 'a medium overall rating',
                                 '2 overall rating': 'a low overall rating', '1 overall rating': 'the lowest overall rating', 'has a 0 overall rating': 'does not have an available rating'}  # Verbalize overall score
         self.msg = ''
 
-    def set_data(self,data):
+    def set_data(self, data):
         "Set the NLG class's data attribute"
+        data['Hospital overall rating'].replace(
+            'Not Available', 0, inplace=True)
         self.data = data.sort_values(
             ['Hospital overall rating', 'Distance'], ascending=[False, True])
-        self.data['Hospital overall rating'].replace(
-            'Not Available', 0, inplace=True)
         self.rows, self.columns = self.data.shape
 
     def get_summary(self):
@@ -50,7 +51,7 @@ class Hospital_NLG:
         if self.rows > 0:
             self.aggregation = '<br><br><h3>Tabular summary:</h3><br>'
             self.aggregation += self.data[['Hospital Name', 'Hospital overall rating', 'Distance',
-                                          'Phone Number', 'Hospital Type', 'Emergency Services', 'Hospital Ownership']].to_html(index=False)
+                                           'Phone Number', 'Hospital Type', 'Emergency Services', 'Hospital Ownership']].to_html(index=False)
 
     def get_hospital_summary(self):
         "Return a verbal summary for the hospitals provided"
